@@ -34,7 +34,7 @@ export default function Footer() {
               />
             </div>
             <p className="text-[0.825rem] max-w-[260px] leading-relaxed" style={{ color: "rgba(255,255,255,0.35)" }}>
-              AI-powered Deep Packet Inspection for ultra-large carrier-grade networks. A product of InterKey — Saudi Arabia&apos;s trusted ICT partner.
+              AI-powered Deep Packet Inspection for ultra-large carrier-grade networks. A product of InterKey, Saudi Arabia&apos;s trusted ICT partner.
             </p>
           </div>
 

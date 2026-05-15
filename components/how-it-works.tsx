@@ -42,13 +42,13 @@ export default function HowItWorks() {
             How InterKey DPI Works
           </h2>
           <p className="mt-3 text-sm leading-relaxed max-w-[500px] mx-auto" style={{ color: "var(--muted-foreground)" }}>
-            From packet ingestion to closed-loop governance — a seamless, AI-driven pipeline.
+            From packet ingestion to closed-loop governance: a seamless, AI-driven pipeline.
           </p>
         </div>
 
         {/* Steps */}
         <div className="reveal relative grid grid-cols-2 lg:grid-cols-4 gap-8">
-          {/* Connector line — desktop only */}
+          {/* Connector line, desktop only */}
           <div
             className="hidden lg:block absolute top-9 left-[12%] right-[12%] h-px"
             style={{ background: "linear-gradient(90deg, transparent, var(--border-light, #C8CAE0) 20%, var(--border-light, #C8CAE0) 80%, transparent)" }}

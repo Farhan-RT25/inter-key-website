@@ -5,7 +5,7 @@ const challenges = [
     num: "CHALLENGE 01",
     icon: ShieldAlert,
     title: "Encrypted & Adversarial Traffic",
-    desc: "VPN applications continuously evolve to evade detection — with 300+ variants in Android markets alone. They disguise traffic to mimic legitimate services, rendering traditional blocking methods ineffective.",
+    desc: "VPN applications continuously evolve to evade detection, with 300+ variants in Android markets alone. They disguise traffic to mimic legitimate services, rendering traditional blocking methods ineffective.",
   },
   {
     num: "CHALLENGE 02",
@@ -17,7 +17,7 @@ const challenges = [
     num: "CHALLENGE 03",
     icon: BarChart3,
     title: "Real-Time Policy Control",
-    desc: "Massive, highly concurrent traffic requires control policies capable of real-time deployment and dynamic adjustment — with live feedback loops to enable closed-loop governance and continuous optimization.",
+    desc: "Massive, highly concurrent traffic requires control policies capable of real-time deployment and dynamic adjustment, with live feedback loops to enable closed-loop governance and continuous optimization.",
   },
 ]
 

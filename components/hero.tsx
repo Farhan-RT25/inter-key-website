@@ -49,7 +49,7 @@ export default function Hero() {
       {/* Scroll progress bar */}
       <div
         ref={progressRef}
-        className="fixed top-0 left-0 h-[3px] z-[9999] transition-[width] duration-100"
+        className="fixed top-0 left-0 h-[3px] z-9999 transition-[width] duration-100"
         style={{ background: "linear-gradient(90deg, var(--accent), var(--accent2))", width: "0%" }}
       />
 
@@ -180,7 +180,7 @@ export default function Hero() {
 
               <p className="text-white/60 text-base leading-relaxed mb-8 max-w-[480px]">
                 InterKey Intelligent DPI integrates a breakthrough AI Traffic Large Model to achieve 99%
-                recognition accuracy on encrypted and adversarial applications — enabling precise,
+                recognition accuracy on encrypted and adversarial applications, enabling precise,
                 real-time control at carrier scale.
               </p>
 

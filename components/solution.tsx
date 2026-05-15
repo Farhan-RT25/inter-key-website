@@ -32,16 +32,16 @@ export default function Solution() {
               <p>
                 InterKey Intelligent DPI is a next-generation, AI-native deep packet inspection platform
                 built for the demands of ultra-large telecom networks. At its core lies an AI Traffic Large
-                Model — not a bolt-on feature, but the engine of the entire system.
+                Model, not a bolt-on feature, but the engine of the entire system.
               </p>
               <p>
                 By deeply integrating this model with a fully automatic online dial-up testing system, the
                 solution extracts multi-modal feature information from application traffic and conducts
-                professional AI model training — achieving results that conventional DPI has never matched.
+                professional AI model training, achieving results that conventional DPI has never matched.
               </p>
               <p>
                 The outcome: accurate identification, effective classification, and efficient control of
-                online content and applications — at global scale, in real time.
+                online content and applications, at global scale, in real time.
               </p>
             </div>
           </div>

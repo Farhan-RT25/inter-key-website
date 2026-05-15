@@ -22,7 +22,7 @@ const lvItems = [
   {
     icon: Zap,
     title: "Second-Level Latency",
-    desc: "Monitoring latency measured in seconds — not minutes — ensuring no governance gap in the face of fast-moving threats.",
+    desc: "Monitoring latency measured in seconds, not minutes, ensuring no governance gap in the face of fast-moving threats.",
   },
 ]
 
@@ -68,7 +68,7 @@ export default function LiveView() {
               Second-Level Real-Time<br className="hidden sm:block" /> Traffic Visibility
             </h2>
             <p className="text-sm leading-relaxed mb-8" style={{ color: "rgba(255,255,255,0.5)" }}>
-              The Live View real-time reporting system provides a complete, live picture of your network — from global traffic flows to individual user data streams.
+              The Live View real-time reporting system provides a complete, live picture of your network, from global traffic flows to individual user data streams.
             </p>
 
             <div className="flex flex-col gap-4">

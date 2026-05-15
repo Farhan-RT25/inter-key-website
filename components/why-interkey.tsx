@@ -6,22 +6,22 @@ const cards = [
   {
     icon: Cpu,
     title: "AI-Native, Not AI-Bolted-On",
-    desc: "The AI Traffic Large Model is the core engine — not an afterthought. Every classification decision flows through a continuously learning, multi-modal model trained on live traffic.",
+    desc: "The AI Traffic Large Model is the core engine, not an afterthought. Every classification decision flows through a continuously learning, multi-modal model trained on live traffic.",
   },
   {
     icon: Radio,
     title: "Designed for Carrier Scale",
-    desc: "Purpose-built for the realities of ultra-large telecom networks — Tbps throughput, full-mesh architecture, and five-nines reliability from day one.",
+    desc: "Purpose-built for the realities of ultra-large telecom networks: Tbps throughput, full-mesh architecture, and five-nines reliability from day one.",
   },
   {
     icon: RefreshCcw,
     title: "Closed-Loop Governance Model",
-    desc: "InterKey's pipeline doesn't stop at blocking — it feeds real-time data back into model training and policy refinement, creating a continuously improving governance loop.",
+    desc: "InterKey's pipeline doesn't stop at blocking; it feeds real-time data back into model training and policy refinement, creating a continuously improving governance loop.",
   },
   {
     icon: BarChart2,
     title: "Proven Accuracy at the Edge",
-    desc: "99% recognition accuracy on the hardest category of adversarial traffic — VPN variants that disguise themselves as legitimate services. Not theoretical. Measured on live networks.",
+    desc: "99% recognition accuracy on the hardest category of adversarial traffic: VPN variants that disguise themselves as legitimate services. Not theoretical. Measured on live networks.",
   },
 ]
 
@@ -41,7 +41,7 @@ export default function WhyInterKey() {
             Built Different.<br className="hidden sm:block" /> Proven at Scale.
           </h2>
           <p className="mt-3 text-sm leading-relaxed max-w-[560px]" style={{ color: "rgba(255,255,255,0.5)" }}>
-            InterKey Intelligent DPI isn&apos;t a feature-matched competitor — it&apos;s a fundamentally different approach to network governance.
+            InterKey Intelligent DPI isn&apos;t a feature-matched competitor; it&apos;s a fundamentally different approach to network governance.
           </p>
         </div>
 
