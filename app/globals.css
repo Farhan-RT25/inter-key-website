@@ -21,7 +21,7 @@
   --secondary-foreground: #FFFFFF;
 
   --muted: #111840;
-  --muted-foreground: #AAADB8;
+  --muted-foreground: #525560;
 
   --accent: #5CCFF7;
   --accent-foreground: #0A0F2E;
@@ -94,6 +94,9 @@
   body {
     @apply bg-background text-foreground;
     overflow-x: hidden;
+  }
+  button {
+    cursor: pointer;
   }
 }
 

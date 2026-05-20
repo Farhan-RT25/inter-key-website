@@ -26,7 +26,7 @@ export default function Challenges() {
     <section id="challenges" className="py-20 px-6 bg-section">
       <div className="max-w-7xl mx-auto">
         <div className="reveal mb-12">
-          <div className="flex items-center gap-2 text-[0.68rem] font-bold uppercase tracking-[0.15em] mb-3" style={{ color: "var(--primary)" }}>
+          <div className="flex items-center gap-2 text-[0.75rem] font-bold uppercase tracking-[0.15em] mb-3" style={{ color: "var(--primary)" }}>
             <span className="w-6 h-0.5 inline-block" style={{ background: "var(--primary)" }} />
             The Problem
           </div>

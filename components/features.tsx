@@ -37,17 +37,17 @@ const features = [
 
 export default function Features() {
   return (
-    <section id="features" className="py-20 px-6 bg-background">
+    <section id="features" className="py-20 px-6 bg-section">
       <div className="max-w-7xl mx-auto">
         <div className="reveal mb-12">
           <div
-            className="flex items-center gap-2 text-[0.68rem] font-bold uppercase tracking-[0.15em] mb-3"
+            className="flex items-center gap-2 text-[0.75rem] font-bold uppercase tracking-[0.15em] mb-3"
             style={{ color: "var(--primary)" }}
           >
             <span className="w-6 h-0.5 inline-block" style={{ background: "var(--primary)" }} />
             Core Capabilities
           </div>
-          <h2 className="text-3xl md:text-4xl font-extrabold leading-tight text-balance text-white">
+          <h2 className="text-3xl md:text-4xl font-extrabold leading-tight text-balance" style={{ color: "#1F2937" }}>
             Four Pillars of Intelligent<br className="hidden sm:block" /> Network Control
           </h2>
         </div>

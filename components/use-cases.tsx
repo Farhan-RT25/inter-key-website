@@ -27,11 +27,11 @@ const cases = [
 
 export default function UseCases() {
   return (
-    <section id="use-cases" className="py-20 px-6 bg-background">
+    <section id="use-cases" className="py-20 px-6 bg-section">
       <div className="max-w-7xl mx-auto">
         <div className="reveal text-center mb-14">
           <div
-            className="flex items-center justify-center gap-2 text-[0.68rem] font-bold uppercase tracking-[0.15em] mb-3"
+            className="flex items-center justify-center gap-2 text-[0.75rem] font-bold uppercase tracking-[0.15em] mb-3"
             style={{ color: "var(--primary)" }}
           >
             <span className="w-6 h-0.5 inline-block" style={{ background: "var(--primary)" }} />
@@ -39,7 +39,8 @@ export default function UseCases() {
             <span className="w-6 h-0.5 inline-block" style={{ background: "var(--primary)" }} />
           </div>
           <h2
-            className="text-3xl md:text-4xl font-extrabold leading-tight text-balance text-white"
+            className="text-3xl md:text-4xl font-extrabold leading-tight text-balance"
+            style={{ color: "#1F2937" }}
           >
             Built for Network Operators<br className="hidden sm:block" /> and Governance Teams
           </h2>
@@ -52,7 +53,7 @@ export default function UseCases() {
               <div
                 key={uc.title}
                 className="reveal group border rounded-2xl p-7 text-center transition-all duration-300 hover:-translate-y-1"
-                style={{ borderColor: "var(--border-light, #C8CAE0)", background: "white" }}
+                style={{ borderColor: "#D1D5DB", background: "white" }}
                 onMouseEnter={(e) => {
                   const el = e.currentTarget as HTMLElement
                   el.style.borderColor = "var(--primary)"
@@ -60,7 +61,7 @@ export default function UseCases() {
                 }}
                 onMouseLeave={(e) => {
                   const el = e.currentTarget as HTMLElement
-                  el.style.borderColor = "var(--border-light, #C8CAE0)"
+                  el.style.borderColor = "#D1D5DB"
                   el.style.boxShadow = "none"
                 }}
               >
@@ -75,7 +76,7 @@ export default function UseCases() {
                 <h4 className="text-sm font-bold mb-2" style={{ color: "#1F2937" }}>
                   {uc.title}
                 </h4>
-                <p className="text-[0.775rem] leading-relaxed" style={{ color: "var(--muted-foreground)" }}>
+                <p className="text-[0.775rem] leading-relaxed" style={{ color: "#6B7280" }}>
                   {uc.desc}
                 </p>
               </div>

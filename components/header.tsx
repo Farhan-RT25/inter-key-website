@@ -2,25 +2,34 @@
 
 import { useState, useEffect } from "react"
 import Link from "next/link"
+import { usePathname } from "next/navigation"
 import { Menu, X } from "lucide-react"
 import { useLanguage } from "@/contexts/language-context"
 
 const t = {
   en: {
-    links: [
+    home: [
+      { label: "Who It Serves", href: "#use-cases" },
+      { label: "Get Started", href: "#contact" },
+    ],
+    features: [
       { label: "Challenges", href: "#challenges" },
       { label: "Features", href: "#features" },
       { label: "Live View", href: "#live-view" },
-      { label: "Use Cases", href: "#use-cases" },
+      { label: "Why InterKey", href: "#why-interkey" },
     ],
     cta: "Request Demo",
   },
   ar: {
-    links: [
+    home: [
+      { label: "من نخدم", href: "#use-cases" },
+      { label: "ابدأ الآن", href: "#contact" },
+    ],
+    features: [
       { label: "التحديات", href: "#challenges" },
       { label: "الميزات", href: "#features" },
       { label: "العرض المباشر", href: "#live-view" },
-      { label: "حالات الاستخدام", href: "#use-cases" },
+      { label: "لماذا إنتركي", href: "#why-interkey" },
     ],
     cta: "طلب عرض توضيحي",
   },
@@ -30,7 +39,9 @@ export default function Header() {
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
   const { lang, toggleLang } = useLanguage()
+  const pathname = usePathname()
   const tx = t[lang]
+  const links = pathname === "/features" ? tx.features : tx.home
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20)
@@ -51,9 +62,9 @@ export default function Header() {
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between h-[68px]">
         {/* Logo */}
-        <Link href="#hero" className="no-underline">
+        <Link href="/" className="no-underline">
           <img
-            src="/images/SVG/Asset 12.svg"
+            src="/images/SVG/Asset 1.svg"
             alt="InterKey Intelligent DPI"
             className="h-8 w-auto"
           />
@@ -61,7 +72,7 @@ export default function Header() {
 
         {/* Desktop nav */}
         <nav className="hidden md:flex items-center gap-1">
-          {tx.links.map((link) => (
+          {links.map((link) => (
             <Link
               key={link.href}
               href={link.href}
@@ -121,7 +132,7 @@ export default function Header() {
       {/* Mobile menu */}
       {mobileOpen && (
         <div className="md:hidden border-t border-white/8 py-3 px-4 flex flex-col gap-1" style={{ background: "rgba(10,15,46,0.98)" }}>
-          {tx.links.map((link) => (
+          {links.map((link) => (
             <Link
               key={link.href}
               href={link.href}

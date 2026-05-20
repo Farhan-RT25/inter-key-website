@@ -15,9 +15,9 @@ import {
 
 const stats = [
   { value: "99", suffix: "%", label: "Recognition Accuracy" },
-  { value: "5", suffix: "9s", label: "Carrier-Grade Uptime" },
-  { value: "≤1", suffix: "hr", label: "Blocking Precision" },
-  { value: "1", suffix: "s", label: "Real-Time Monitoring" },
+  { value: "99.999", suffix: "%", label: "Availability" },
+  { value: "≤2", suffix: "hr", label: "App Blocking SLA" },
+  { value: "1", suffix: "s", label: "Real-Time Reporting" },
 ]
 
 const floatingBadges = [
@@ -117,7 +117,7 @@ export default function Hero() {
         />
 
         {/* Floating badges */}
-        {floatingBadges.map((b) => {
+        {/* {floatingBadges.map((b) => {
           const Icon = b.icon
           return (
             <div
@@ -143,7 +143,7 @@ export default function Hero() {
               </div>
             </div>
           )
-        })}
+        })} */}
 
         {/* Main content */}
         <div className="relative z-10 max-w-7xl mx-auto px-6 w-full">
@@ -197,7 +197,7 @@ export default function Hero() {
                   Request a Demo
                 </Link>
                 <Link
-                  href="#features"
+                  href="/features"
                   className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl text-sm font-semibold text-white border transition-all duration-250 hover:bg-white/6 hover:-translate-y-0.5"
                   style={{ borderColor: "rgba(255,255,255,0.2)" }}
                 >
@@ -238,8 +238,7 @@ export default function Hero() {
                       {s.suffix}
                     </div>
                     <div
-                      className="text-[0.7rem] uppercase tracking-wider mt-2 font-medium"
-                      style={{ color: "var(--muted-foreground)" }}
+                      className="text-[0.7rem] uppercase tracking-wider mt-2 font-medium text-white/60"
                     >
                       {s.label}
                     </div>

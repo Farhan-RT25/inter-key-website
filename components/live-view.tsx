@@ -31,8 +31,12 @@ const BAR_HEIGHTS = [45, 62, 38, 71, 55, 80, 43, 67, 90, 52, 75, 60, 85, 48, 70,
 export default function LiveView() {
   const [bars, setBars] = useState(BAR_HEIGHTS)
   const [blockedCount, setBlockedCount] = useState(312)
+  const [tbps, setTbps] = useState(12.4)
+  const [accuracy, setAccuracy] = useState(99.1)
   const intervalRef = useRef<NodeJS.Timeout | null>(null)
   const blockedRef = useRef<NodeJS.Timeout | null>(null)
+  const tbpsRef = useRef<NodeJS.Timeout | null>(null)
+  const accuracyRef = useRef<NodeJS.Timeout | null>(null)
 
   useEffect(() => {
     intervalRef.current = setInterval(() => {
@@ -41,9 +45,17 @@ export default function LiveView() {
     blockedRef.current = setInterval(() => {
       setBlockedCount(Math.floor(Math.random() * 400 + 200))
     }, 1200)
+    tbpsRef.current = setInterval(() => {
+      setTbps(Math.round((Math.random() * 3.6 + 11.2) * 10) / 10)
+    }, 2000)
+    accuracyRef.current = setInterval(() => {
+      setAccuracy(Math.round((Math.random() * 0.6 + 98.8) * 10) / 10)
+    }, 2500)
     return () => {
       if (intervalRef.current) clearInterval(intervalRef.current)
       if (blockedRef.current) clearInterval(blockedRef.current)
+      if (tbpsRef.current) clearInterval(tbpsRef.current)
+      if (accuracyRef.current) clearInterval(accuracyRef.current)
     }
   }, [])
 
@@ -58,11 +70,11 @@ export default function LiveView() {
           {/* Text */}
           <div className="reveal">
             <div
-              className="flex items-center gap-2 text-[0.68rem] font-bold uppercase tracking-[0.15em] mb-4"
+              className="flex items-center gap-2 text-[0.75rem] font-bold uppercase tracking-[0.15em] mb-4"
               style={{ color: "var(--accent)" }}
             >
               <Activity size={12} style={{ animation: "live-blink 1.5s infinite" }} />
-              Live View Monitoring
+              Live View Reporting
             </div>
             <h2 className="text-3xl md:text-4xl font-extrabold leading-tight text-white text-balance mb-3">
               Second-Level Real-Time<br className="hidden sm:block" /> Traffic Visibility
@@ -120,7 +132,7 @@ export default function LiveView() {
               <div className="flex items-center justify-between mb-5">
                 <div className="flex items-center gap-2 text-sm font-semibold text-white">
                   <Activity size={15} style={{ color: "var(--accent)" }} />
-                  Live Network Monitor
+                  Network Monitor Simulation
                 </div>
                 <div
                   className="flex items-center gap-1.5 text-[0.65rem] font-bold uppercase tracking-wider font-mono"
@@ -130,7 +142,7 @@ export default function LiveView() {
                     className="w-1.5 h-1.5 rounded-full inline-block"
                     style={{ background: "var(--accent2)", animation: "live-blink 1.5s ease-in-out infinite" }}
                   />
-                  Live
+                  Interkey Lab
                 </div>
               </div>
 
@@ -166,7 +178,7 @@ export default function LiveView() {
                   style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)" }}
                 >
                   <div className="font-mono text-base font-bold" style={{ color: "var(--accent)" }}>
-                    12.4 Tbps
+                    {tbps} Tbps
                   </div>
                   <div className="text-[0.6rem] uppercase tracking-wider mt-0.5" style={{ color: "rgba(255,255,255,0.35)" }}>
                     Traffic Vol.
@@ -176,7 +188,7 @@ export default function LiveView() {
                   className="rounded-lg p-3"
                   style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)" }}
                 >
-                  <div className="font-mono text-base font-bold text-white">99.1%</div>
+                  <div className="font-mono text-base font-bold text-white">{accuracy}%</div>
                   <div className="text-[0.6rem] uppercase tracking-wider mt-0.5" style={{ color: "rgba(255,255,255,0.35)" }}>
                     Accuracy
                   </div>

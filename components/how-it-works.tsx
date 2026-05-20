@@ -31,7 +31,7 @@ export default function HowItWorks() {
       <div className="max-w-7xl mx-auto">
         <div className="reveal text-center mb-14">
           <div
-            className="flex items-center justify-center gap-2 text-[0.68rem] font-bold uppercase tracking-[0.15em] mb-3"
+            className="flex items-center justify-center gap-2 text-[0.75rem] font-bold uppercase tracking-[0.15em] mb-3"
             style={{ color: "var(--primary)" }}
           >
             <span className="w-6 h-0.5 inline-block" style={{ background: "var(--primary)" }} />
