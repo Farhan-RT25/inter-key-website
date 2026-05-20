@@ -2,29 +2,10 @@
 
 import { useEffect, useRef, useState } from "react"
 import { Globe, TrendingUp, Sliders, Zap, Activity } from "lucide-react"
+import { useLanguage } from "@/contexts/language-context"
+import { translations } from "@/lib/translations"
 
-const lvItems = [
-  {
-    icon: Globe,
-    title: "Global Traffic Visualization",
-    desc: "Full-network view of user traffic with drill-down capability to individual data flows and application-level analysis.",
-  },
-  {
-    icon: TrendingUp,
-    title: "Traffic Trend Insights",
-    desc: "Network-level and application-level traffic trend analysis with refined IP-level breakdowns for precise situational awareness.",
-  },
-  {
-    icon: Sliders,
-    title: "Policy Execution Feedback",
-    desc: "Real-time feedback on control policy execution, enabling continuous optimization and precise closed-loop governance.",
-  },
-  {
-    icon: Zap,
-    title: "Second-Level Latency",
-    desc: "Monitoring latency measured in seconds, not minutes, ensuring no governance gap in the face of fast-moving threats.",
-  },
-]
+const icons = [Globe, TrendingUp, Sliders, Zap]
 
 const BAR_HEIGHTS = [45, 62, 38, 71, 55, 80, 43, 67, 90, 52, 75, 60, 85, 48, 70, 58, 88, 42, 65, 78]
 
@@ -37,6 +18,8 @@ export default function LiveView() {
   const blockedRef = useRef<NodeJS.Timeout | null>(null)
   const tbpsRef = useRef<NodeJS.Timeout | null>(null)
   const accuracyRef = useRef<NodeJS.Timeout | null>(null)
+  const { lang } = useLanguage()
+  const tx = translations.liveView[lang]
 
   useEffect(() => {
     intervalRef.current = setInterval(() => {
@@ -74,18 +57,18 @@ export default function LiveView() {
               style={{ color: "var(--accent)" }}
             >
               <Activity size={12} style={{ animation: "live-blink 1.5s infinite" }} />
-              Live View Reporting
+              {tx.label}
             </div>
             <h2 className="text-3xl md:text-4xl font-extrabold leading-tight text-white text-balance mb-3">
-              Second-Level Real-Time<br className="hidden sm:block" /> Traffic Visibility
+              {tx.heading}
             </h2>
             <p className="text-sm leading-relaxed mb-8" style={{ color: "rgba(255,255,255,0.5)" }}>
-              The Live View real-time reporting system provides a complete, live picture of your network, from global traffic flows to individual user data streams.
+              {tx.sub}
             </p>
 
             <div className="flex flex-col gap-4">
-              {lvItems.map((item) => {
-                const Icon = item.icon
+              {tx.items.map((item, i) => {
+                const Icon = icons[i]
                 return (
                   <div
                     key={item.title}
@@ -132,7 +115,7 @@ export default function LiveView() {
               <div className="flex items-center justify-between mb-5">
                 <div className="flex items-center gap-2 text-sm font-semibold text-white">
                   <Activity size={15} style={{ color: "var(--accent)" }} />
-                  Network Monitor Simulation
+                  {tx.dashTitle}
                 </div>
                 <div
                   className="flex items-center gap-1.5 text-[0.65rem] font-bold uppercase tracking-wider font-mono"
@@ -142,7 +125,7 @@ export default function LiveView() {
                     className="w-1.5 h-1.5 rounded-full inline-block"
                     style={{ background: "var(--accent2)", animation: "live-blink 1.5s ease-in-out infinite" }}
                   />
-                  Interkey Lab
+                  {tx.dashLab}
                 </div>
               </div>
 
@@ -170,7 +153,7 @@ export default function LiveView() {
                     {blockedCount}
                   </div>
                   <div className="text-[0.6rem] uppercase tracking-wider mt-0.5" style={{ color: "rgba(255,255,255,0.35)" }}>
-                    Blocked / sec
+                    {tx.dashBlocked}
                   </div>
                 </div>
                 <div
@@ -181,7 +164,7 @@ export default function LiveView() {
                     {tbps} Tbps
                   </div>
                   <div className="text-[0.6rem] uppercase tracking-wider mt-0.5" style={{ color: "rgba(255,255,255,0.35)" }}>
-                    Traffic Vol.
+                    {tx.dashTraffic}
                   </div>
                 </div>
                 <div
@@ -190,7 +173,7 @@ export default function LiveView() {
                 >
                   <div className="font-mono text-base font-bold text-white">{accuracy}%</div>
                   <div className="text-[0.6rem] uppercase tracking-wider mt-0.5" style={{ color: "rgba(255,255,255,0.35)" }}>
-                    Accuracy
+                    {tx.dashAccuracy}
                   </div>
                 </div>
               </div>

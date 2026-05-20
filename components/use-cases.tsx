@@ -1,31 +1,15 @@
 "use client"
 
 import { TowerControl, Globe2, Landmark, Building2 } from "lucide-react"
+import { useLanguage } from "@/contexts/language-context"
+import { translations } from "@/lib/translations"
 
-const cases = [
-  {
-    icon: TowerControl,
-    title: "National Telecom Operators",
-    desc: "Operators managing fixed and mobile networks at national scale, requiring unified, high-reliability content governance.",
-  },
-  {
-    icon: Globe2,
-    title: "Internet Service Providers",
-    desc: "ISPs needing precise application classification and content filtering to meet national regulatory requirements.",
-  },
-  {
-    icon: Landmark,
-    title: "Regulatory Bodies",
-    desc: "Government and regulatory agencies responsible for enforcing digital safety laws, including online minor protection mandates.",
-  },
-  {
-    icon: Building2,
-    title: "Enterprise Network Teams",
-    desc: "Large enterprise and campus network operators requiring advanced traffic visibility, application control, and security governance.",
-  },
-]
+const icons = [TowerControl, Globe2, Landmark, Building2]
 
 export default function UseCases() {
+  const { lang } = useLanguage()
+  const tx = translations.useCases[lang]
+
   return (
     <section id="use-cases" className="py-20 px-6 bg-section">
       <div className="max-w-7xl mx-auto">
@@ -35,20 +19,20 @@ export default function UseCases() {
             style={{ color: "var(--primary)" }}
           >
             <span className="w-6 h-0.5 inline-block" style={{ background: "var(--primary)" }} />
-            Who It Serves
+            {tx.label}
             <span className="w-6 h-0.5 inline-block" style={{ background: "var(--primary)" }} />
           </div>
           <h2
             className="text-3xl md:text-4xl font-extrabold leading-tight text-balance"
             style={{ color: "#1F2937" }}
           >
-            Built for Network Operators<br className="hidden sm:block" /> and Governance Teams
+            {tx.heading}
           </h2>
         </div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-          {cases.map((uc) => {
-            const Icon = uc.icon
+          {tx.cases.map((uc, i) => {
+            const Icon = icons[i]
             return (
               <div
                 key={uc.title}

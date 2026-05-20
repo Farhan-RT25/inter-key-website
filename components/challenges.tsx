@@ -1,46 +1,34 @@
-import { ShieldAlert, Server, BarChart3 } from "lucide-react"
+"use client"
 
-const challenges = [
-  {
-    num: "CHALLENGE 01",
-    icon: ShieldAlert,
-    title: "Encrypted & Adversarial Traffic",
-    desc: "VPN applications continuously evolve to evade detection, with 300+ variants in Android markets alone. They disguise traffic to mimic legitimate services, rendering traditional blocking methods ineffective.",
-  },
-  {
-    num: "CHALLENGE 02",
-    icon: Server,
-    title: "Ultra-Large Network Scale",
-    desc: "Carrier-grade networks carry traffic ranging from Tbps to dozens of Tbps. Effective governance demands network architectures with high performance, elastic scalability, and carrier-grade reliability.",
-  },
-  {
-    num: "CHALLENGE 03",
-    icon: BarChart3,
-    title: "Real-Time Policy Control",
-    desc: "Massive, highly concurrent traffic requires control policies capable of real-time deployment and dynamic adjustment, with live feedback loops to enable closed-loop governance and continuous optimization.",
-  },
-]
+import { ShieldAlert, Server, BarChart3 } from "lucide-react"
+import { useLanguage } from "@/contexts/language-context"
+import { translations } from "@/lib/translations"
+
+const icons = [ShieldAlert, Server, BarChart3]
 
 export default function Challenges() {
+  const { lang } = useLanguage()
+  const tx = translations.challenges[lang]
+
   return (
     <section id="challenges" className="py-20 px-6 bg-section">
       <div className="max-w-7xl mx-auto">
         <div className="reveal mb-12">
           <div className="flex items-center gap-2 text-[0.75rem] font-bold uppercase tracking-[0.15em] mb-3" style={{ color: "var(--primary)" }}>
             <span className="w-6 h-0.5 inline-block" style={{ background: "var(--primary)" }} />
-            The Problem
+            {tx.label}
           </div>
           <h2 className="text-3xl md:text-4xl font-extrabold leading-tight text-balance" style={{ color: "var(--text-primary, #1F2937)" }}>
-            Three Critical Challenges Facing<br className="hidden sm:block" /> Carrier-Grade Networks
+            {tx.heading}
           </h2>
           <p className="mt-3 text-sm leading-relaxed max-w-[560px]" style={{ color: "var(--muted-foreground)" }}>
-            As digital transformation accelerates, telecom operators managing Tbps-scale traffic face challenges that traditional DPI technologies simply cannot solve.
+            {tx.sub}
           </p>
         </div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {challenges.map((c) => {
-            const Icon = c.icon
+          {tx.items.map((c, i) => {
+            const Icon = icons[i]
             return (
               <div
                 key={c.num}

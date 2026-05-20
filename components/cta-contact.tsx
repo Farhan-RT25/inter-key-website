@@ -3,67 +3,7 @@
 import { useState, useRef } from "react"
 import { Mail, Phone, Send, ChevronDown, Check } from "lucide-react"
 import { useLanguage } from "@/contexts/language-context"
-
-const t = {
-  en: {
-    label: "Get Started",
-    heading: "Ready to Take Control of Your Network?",
-    sub: "Talk to our team about how InterKey Intelligent DPI can transform your network governance capability.",
-    emailBtn: "Email Our Team",
-    phone: "+966-11-2180999",
-    firstName: "First Name",
-    firstPlaceholder: "Ahmad",
-    lastName: "Last Name",
-    lastPlaceholder: "Al-Rashidi",
-    email: "Business Email",
-    emailPlaceholder: "you@company.com",
-    org: "Organization",
-    orgPlaceholder: "Telecom company, ISP, regulator…",
-    role: "What best describes you?",
-    rolePlaceholder: "Select your role…",
-    roles: [
-      "National Telecom Operator",
-      "Internet Service Provider",
-      "Government / Regulatory Body",
-      "Enterprise Network Team",
-      "Other",
-    ],
-    message: "Message",
-    messagePlaceholder: "Tell us about your network scale, key challenges, or what you'd like to see in a demo…",
-    submit: "Request a Demo",
-    successTitle: "Request Received",
-    successMsg: "Thank you! Our team will reach out within 1 business day.",
-  },
-  ar: {
-    label: "ابدأ الآن",
-    heading: "هل أنت مستعد للسيطرة على شبكتك؟",
-    sub: "تحدث مع فريقنا حول كيفية تحويل InterKey Intelligent DPI لقدرات حوكمة شبكتك.",
-    emailBtn: "راسل فريقنا",
-    phone: "+966-11-2180999",
-    firstName: "الاسم الأول",
-    firstPlaceholder: "أحمد",
-    lastName: "اسم العائلة",
-    lastPlaceholder: "الراشدي",
-    email: "البريد الإلكتروني للعمل",
-    emailPlaceholder: "you@company.com",
-    org: "المؤسسة",
-    orgPlaceholder: "شركة اتصالات، مزود خدمة إنترنت، جهة تنظيمية…",
-    role: "ما الذي يصفك بشكل أفضل؟",
-    rolePlaceholder: "اختر دورك…",
-    roles: [
-      "مشغل اتصالات وطني",
-      "مزود خدمة الإنترنت",
-      "جهة حكومية / تنظيمية",
-      "فريق شبكات المؤسسات",
-      "أخرى",
-    ],
-    message: "الرسالة",
-    messagePlaceholder: "أخبرنا عن حجم شبكتك، والتحديات الرئيسية، أو ما تريد رؤيته في العرض التوضيحي…",
-    submit: "طلب عرض توضيحي",
-    successTitle: "تم استلام طلبك",
-    successMsg: "شكراً لك! سيتواصل معك فريقنا خلال يوم عمل واحد.",
-  },
-}
+import { translations } from "@/lib/translations"
 
 export default function CTAContact() {
   const [submitted, setSubmitted] = useState(false)
@@ -71,7 +11,7 @@ export default function CTAContact() {
   const [roleOpen, setRoleOpen] = useState(false)
   const dropdownRef = useRef<HTMLDivElement>(null)
   const { lang } = useLanguage()
-  const tx = t[lang]
+  const tx = translations.contact[lang]
 
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()

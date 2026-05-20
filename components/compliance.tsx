@@ -14,7 +14,7 @@ export default function Compliance() {
               Aligned with Global Cyberspace Governance Standards
             </h2>
             <p className="text-sm leading-relaxed mt-3" style={{ color: "var(--muted-foreground)" }}>
-              Building a clean and secure cyberspace is a global consensus. InterKey DPI is engineered to
+              Building a clean and secure cyberspace is a global consensus. Interkey DPI is engineered to
               support operators in meeting the regulatory obligations that come with it.
             </p>
           </div>

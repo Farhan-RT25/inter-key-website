@@ -5,43 +5,15 @@ import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { Menu, X } from "lucide-react"
 import { useLanguage } from "@/contexts/language-context"
-
-const t = {
-  en: {
-    home: [
-      { label: "Who It Serves", href: "#use-cases" },
-      { label: "Get Started", href: "#contact" },
-    ],
-    features: [
-      { label: "Challenges", href: "#challenges" },
-      { label: "Features", href: "#features" },
-      { label: "Live View", href: "#live-view" },
-      { label: "Why InterKey", href: "#why-interkey" },
-    ],
-    cta: "Request Demo",
-  },
-  ar: {
-    home: [
-      { label: "من نخدم", href: "#use-cases" },
-      { label: "ابدأ الآن", href: "#contact" },
-    ],
-    features: [
-      { label: "التحديات", href: "#challenges" },
-      { label: "الميزات", href: "#features" },
-      { label: "العرض المباشر", href: "#live-view" },
-      { label: "لماذا إنتركي", href: "#why-interkey" },
-    ],
-    cta: "طلب عرض توضيحي",
-  },
-}
+import { translations } from "@/lib/translations"
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
   const { lang, toggleLang } = useLanguage()
   const pathname = usePathname()
-  const tx = t[lang]
-  const links = pathname === "/features" ? tx.features : tx.home
+  const tx = translations.header[lang]
+  const links = pathname.startsWith("/features") ? tx.features : tx.home
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20)

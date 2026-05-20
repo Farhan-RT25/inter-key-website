@@ -2,33 +2,14 @@
 
 import Link from "next/link"
 import { useEffect, useRef } from "react"
-import {
-  CalendarCheck,
-  ChevronDown,
-  Cpu,
-  ArrowDown,
-  Shield,
-  Zap,
-  Activity,
-  Server,
-} from "lucide-react"
-
-const stats = [
-  { value: "99", suffix: "%", label: "Recognition Accuracy" },
-  { value: "99.999", suffix: "%", label: "Availability" },
-  { value: "≤2", suffix: "hr", label: "App Blocking SLA" },
-  { value: "1", suffix: "s", label: "Real-Time Reporting" },
-]
-
-const floatingBadges = [
-  { icon: Shield, label: "VPN Detection", sub: "99% accuracy", x: "5%", y: "18%" },
-  { icon: Zap, label: "Real-Time", sub: "< 1s latency", x: "80%", y: "12%" },
-  { icon: Activity, label: "Live View", sub: "Continuous", x: "75%", y: "72%" },
-  { icon: Server, label: "Tbps Scale", sub: "Carrier-grade", x: "2%", y: "68%" },
-]
+import { CalendarCheck, ChevronDown, Cpu } from "lucide-react"
+import { useLanguage } from "@/contexts/language-context"
+import { translations } from "@/lib/translations"
 
 export default function Hero() {
   const progressRef = useRef<HTMLDivElement>(null)
+  const { lang } = useLanguage()
+  const tx = translations.hero[lang]
 
   useEffect(() => {
     const onScroll = () => {
@@ -61,9 +42,7 @@ export default function Hero() {
         {/* Data-center background image */}
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage: "url('/images/hero-datacenter.jpg')",
-          }}
+          style={{ backgroundImage: "url('/images/hero-datacenter.jpg')" }}
         />
         {/* Dark overlay with gradient */}
         <div
@@ -85,65 +64,9 @@ export default function Hero() {
         />
 
         {/* Glow orbs */}
-        <div
-          className="orb"
-          style={{
-            width: 500,
-            height: 500,
-            background: "rgba(18,62,221,0.28)",
-            top: -120,
-            right: -120,
-          }}
-        />
-        <div
-          className="orb"
-          style={{
-            width: 350,
-            height: 350,
-            background: "rgba(92,207,247,0.12)",
-            bottom: 60,
-            left: -60,
-          }}
-        />
-        <div
-          className="orb"
-          style={{
-            width: 260,
-            height: 260,
-            background: "rgba(0,229,160,0.09)",
-            top: "40%",
-            right: "15%",
-          }}
-        />
-
-        {/* Floating badges */}
-        {/* {floatingBadges.map((b) => {
-          const Icon = b.icon
-          return (
-            <div
-              key={b.label}
-              className="absolute hidden lg:flex items-center gap-2.5 px-3.5 py-2.5 rounded-xl backdrop-blur-sm animate-pulse"
-              style={{
-                left: b.x,
-                top: b.y,
-                background: "rgba(13,21,64,0.75)",
-                border: "1px solid rgba(92,207,247,0.18)",
-                animationDuration: "3s",
-              }}
-            >
-              <div
-                className="w-8 h-8 rounded-lg flex items-center justify-center shrink-0"
-                style={{ background: "rgba(92,207,247,0.12)" }}
-              >
-                <Icon size={15} style={{ color: "var(--accent)" }} />
-              </div>
-              <div>
-                <div className="text-white text-xs font-semibold leading-tight">{b.label}</div>
-                <div className="text-white/45 text-[0.65rem] leading-tight">{b.sub}</div>
-              </div>
-            </div>
-          )
-        })} */}
+        <div className="orb" style={{ width: 500, height: 500, background: "rgba(18,62,221,0.28)", top: -120, right: -120 }} />
+        <div className="orb" style={{ width: 350, height: 350, background: "rgba(92,207,247,0.12)", bottom: 60, left: -60 }} />
+        <div className="orb" style={{ width: 260, height: 260, background: "rgba(0,229,160,0.09)", top: "40%", right: "15%" }} />
 
         {/* Main content */}
         <div className="relative z-10 max-w-7xl mx-auto px-6 w-full">
@@ -160,11 +83,11 @@ export default function Hero() {
                 }}
               >
                 <Cpu size={11} />
-                AI-Powered Network Intelligence
+                {tx.badge}
               </div>
 
               <h1 className="text-4xl md:text-5xl xl:text-[3.4rem] font-extrabold leading-[1.08] text-white mb-5 text-balance">
-                Redefining Control for{" "}
+                {tx.h1pre}{" "}
                 <span
                   style={{
                     background: "linear-gradient(90deg, var(--accent), var(--accent2))",
@@ -173,15 +96,13 @@ export default function Hero() {
                     backgroundClip: "text",
                   }}
                 >
-                  Ultra-Large Traffic
-                </span>{" "}
-                Networks
+                  {tx.h1highlight}
+                </span>
+                {tx.h1post && <>{" "}{tx.h1post}</>}
               </h1>
 
               <p className="text-white/60 text-base leading-relaxed mb-8 max-w-[480px]">
-                InterKey Intelligent DPI integrates a breakthrough AI Traffic Large Model to achieve 99%
-                recognition accuracy on encrypted and adversarial applications, enabling precise,
-                real-time control at carrier scale.
+                {tx.sub}
               </p>
 
               <div className="flex flex-wrap gap-4">
@@ -194,15 +115,14 @@ export default function Hero() {
                   }}
                 >
                   <CalendarCheck size={16} />
-                  Request a Demo
+                  {tx.requestDemo}
                 </Link>
                 <Link
                   href="/features"
                   className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl text-sm font-semibold text-white border transition-all duration-250 hover:bg-white/6 hover:-translate-y-0.5"
                   style={{ borderColor: "rgba(255,255,255,0.2)" }}
                 >
-                  <ArrowDown size={16} />
-                  Explore Features
+                  {tx.exploreFeatures}
                 </Link>
               </div>
             </div>
@@ -216,13 +136,12 @@ export default function Hero() {
                 animation: "fadeUp 0.7s 0.25s ease both",
               }}
             >
-              {stats.map((s) => (
+              {tx.stats.map((s) => (
                 <div
                   key={s.label}
                   className="relative p-8 text-center group transition-all duration-300 hover:bg-white/6"
                   style={{ background: "rgba(255,255,255,0.02)" }}
                 >
-                  {/* Gradient shimmer corner */}
                   <div
                     className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
                     style={{
@@ -237,9 +156,7 @@ export default function Hero() {
                       <span style={{ color: "var(--accent)" }}>{s.value}</span>
                       {s.suffix}
                     </div>
-                    <div
-                      className="text-[0.7rem] uppercase tracking-wider mt-2 font-medium text-white/60"
-                    >
+                    <div className="text-[0.7rem] uppercase tracking-wider mt-2 font-medium text-white/60">
                       {s.label}
                     </div>
                   </div>
@@ -255,7 +172,7 @@ export default function Hero() {
           style={{ animation: "scroll-bounce 2s infinite", transform: "translateX(-50%)" }}
         >
           <ChevronDown size={18} />
-          Scroll to explore
+          {tx.scrollHint}
         </div>
       </section>
     </>

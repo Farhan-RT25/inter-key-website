@@ -1,41 +1,22 @@
-import { BrainCircuit, UserCheck, Network, Rocket } from "lucide-react"
+"use client"
 
-const features = [
-  {
-    icon: BrainCircuit,
-    colorClass: "blue",
-    title: "AI Traffic Large Model",
-    desc: "The AI Traffic Large Model is built into the core of the DPI engine, not an add-on. An automated online probing system continuously extracts multi-modal features from live traffic, feeds them into professional model training cycles, and achieves a 99% recognition rate for VPN and other adversarial encrypted applications.",
-    tags: ["Multi-modal Feature Extraction", "Automated Model Training", "99% Accuracy"],
-    iconStyle: { background: "linear-gradient(135deg, rgba(18,62,221,0.12), rgba(92,207,247,0.12))", color: "var(--primary)" },
-  },
-  {
-    icon: UserCheck,
-    colorClass: "teal",
-    title: "VPN User Profiling System",
-    desc: "To counter frequently disguised VPN applications, the solution innovatively constructs a user profiling system based on usage frequency and behavioral patterns. This dramatically reduces misjudgment and false-blocking rates, allowing governance teams to act with confidence and precision.",
-    tags: ["Behavioral Analysis", "Usage Frequency Profiling", "Reduced False Positives"],
-    iconStyle: { background: "linear-gradient(135deg, rgba(92,207,247,0.12), rgba(0,229,160,0.12))", color: "#0EB89A" },
-  },
-  {
-    icon: Network,
-    colorClass: "purple",
-    title: "Carrier-Grade High Reliability",
-    desc: "Built on cloud network architecture with full-mesh interconnection between the control plane and user plane. A multi-level disaster recovery mechanism spans from VM-level to resource pool-level, delivering 99.999% (five nines) uptime, meeting the most stringent core network stability requirements.",
-    tags: ["Full-Mesh Architecture", "99.999% Uptime SLA", "Multi-Level Disaster Recovery"],
-    iconStyle: { background: "linear-gradient(135deg, rgba(42,42,119,0.2), rgba(18,62,221,0.12))", color: "var(--secondary)" },
-  },
-  {
-    icon: Rocket,
-    colorClass: "green",
-    title: "Agile Service Expansion",
-    desc: "The cloud-native intelligent O&M platform enables fast launch of new services through flexible service chain chaining. Combined with flexible deployment of user-plane nodes, it supports agile rollout and smooth iteration of new services in live networks, adapting to any network upgrade or business change.",
-    tags: ["Cloud-Native Architecture", "Service Chain Chaining", "Elastic Scalability"],
-    iconStyle: { background: "linear-gradient(135deg, rgba(0,229,160,0.12), rgba(92,207,247,0.12))", color: "#059669" },
-  },
+import { BrainCircuit, UserCheck, Network, Rocket } from "lucide-react"
+import { useLanguage } from "@/contexts/language-context"
+import { translations } from "@/lib/translations"
+
+const iconStyles = [
+  { background: "linear-gradient(135deg, rgba(18,62,221,0.12), rgba(92,207,247,0.12))", color: "var(--primary)" },
+  { background: "linear-gradient(135deg, rgba(92,207,247,0.12), rgba(0,229,160,0.12))", color: "#0EB89A" },
+  { background: "linear-gradient(135deg, rgba(42,42,119,0.2), rgba(18,62,221,0.12))", color: "var(--secondary)" },
+  { background: "linear-gradient(135deg, rgba(0,229,160,0.12), rgba(92,207,247,0.12))", color: "#059669" },
 ]
 
+const icons = [BrainCircuit, UserCheck, Network, Rocket]
+
 export default function Features() {
+  const { lang } = useLanguage()
+  const tx = translations.features[lang]
+
   return (
     <section id="features" className="py-20 px-6 bg-section">
       <div className="max-w-7xl mx-auto">
@@ -45,16 +26,16 @@ export default function Features() {
             style={{ color: "var(--primary)" }}
           >
             <span className="w-6 h-0.5 inline-block" style={{ background: "var(--primary)" }} />
-            Core Capabilities
+            {tx.label}
           </div>
           <h2 className="text-3xl md:text-4xl font-extrabold leading-tight text-balance" style={{ color: "#1F2937" }}>
-            Four Pillars of Intelligent<br className="hidden sm:block" /> Network Control
+            {tx.heading}
           </h2>
         </div>
 
         <div className="grid md:grid-cols-2 gap-6">
-          {features.map((f) => {
-            const Icon = f.icon
+          {tx.items.map((f, i) => {
+            const Icon = icons[i]
             return (
               <div
                 key={f.title}
@@ -75,7 +56,7 @@ export default function Features() {
 
                 <div
                   className="w-14 h-14 rounded-2xl flex items-center justify-center mb-6"
-                  style={f.iconStyle}
+                  style={iconStyles[i]}
                 >
                   <Icon size={26} />
                 </div>

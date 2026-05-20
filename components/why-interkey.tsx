@@ -1,31 +1,15 @@
 "use client"
 
 import { Cpu, Radio, RefreshCcw, BarChart2 } from "lucide-react"
+import { useLanguage } from "@/contexts/language-context"
+import { translations } from "@/lib/translations"
 
-const cards = [
-  {
-    icon: Cpu,
-    title: "AI-Native, Not AI-Bolted-On",
-    desc: "The AI Traffic Large Model is the core engine, not an afterthought. Every classification decision flows through a continuously learning, multi-modal model trained on live traffic.",
-  },
-  {
-    icon: Radio,
-    title: "Designed for Carrier Scale",
-    desc: "Purpose-built for the realities of ultra-large telecom networks: Tbps throughput, full-mesh architecture, and five-nines reliability from day one.",
-  },
-  {
-    icon: RefreshCcw,
-    title: "Closed-Loop Governance Model",
-    desc: "InterKey's pipeline doesn't stop at blocking; it feeds real-time data back into model training and policy refinement, creating a continuously improving governance loop.",
-  },
-  {
-    icon: BarChart2,
-    title: "Proven Accuracy at the Edge",
-    desc: "99% recognition accuracy on the hardest category of adversarial traffic: VPN variants that disguise themselves as legitimate services. Not theoretical. Measured on live networks.",
-  },
-]
+const icons = [Cpu, Radio, RefreshCcw, BarChart2]
 
 export default function WhyInterKey() {
+  const { lang } = useLanguage()
+  const tx = translations.whyInterKey[lang]
+
   return (
     <section id="why-interkey" className="py-20 px-6" style={{ background: "var(--bg-dark)" }}>
       <div className="max-w-7xl mx-auto">
@@ -35,19 +19,19 @@ export default function WhyInterKey() {
             style={{ color: "var(--accent)" }}
           >
             <span className="w-6 h-0.5 inline-block" style={{ background: "var(--accent)" }} />
-            Why InterKey
+            {tx.label}
           </div>
           <h2 className="text-3xl md:text-4xl font-extrabold leading-tight text-white text-balance">
-            Built Different.<br className="hidden sm:block" /> Proven at Scale.
+            {tx.heading}
           </h2>
           <p className="mt-3 text-sm leading-relaxed max-w-[560px]" style={{ color: "rgba(255,255,255,0.5)" }}>
-            InterKey Intelligent DPI isn&apos;t a feature-matched competitor; it&apos;s a fundamentally different approach to network governance.
+            {tx.sub}
           </p>
         </div>
 
         <div className="grid sm:grid-cols-2 gap-5">
-          {cards.map((card) => {
-            const Icon = card.icon
+          {tx.cards.map((card, i) => {
+            const Icon = icons[i]
             return (
               <div
                 key={card.title}

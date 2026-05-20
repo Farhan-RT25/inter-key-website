@@ -4,7 +4,7 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* InterKey DPI: dark-first design */
+  /* Interkey DPI: dark-first design */
   --background: #0A0F2E;
   --foreground: #F0F2FF;
 

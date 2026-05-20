@@ -1,31 +1,15 @@
 "use client"
 
 import { ArrowDownToLine, BrainCircuit, Gavel, RefreshCcw } from "lucide-react"
+import { useLanguage } from "@/contexts/language-context"
+import { translations } from "@/lib/translations"
 
-const steps = [
-  {
-    icon: ArrowDownToLine,
-    title: "Traffic Ingestion",
-    desc: "Full carrier-grade traffic intake at Tbps scale across fixed and mobile networks",
-  },
-  {
-    icon: BrainCircuit,
-    title: "AI Classification",
-    desc: "Multi-modal feature extraction and AI large model inference for 99% accurate app identification",
-  },
-  {
-    icon: Gavel,
-    title: "Policy Execution",
-    desc: "Dynamic, real-time policy deployment with flexible service chain control and precise blocking",
-  },
-  {
-    icon: RefreshCcw,
-    title: "Closed-Loop Feedback",
-    desc: "Live View monitoring feeds real-time data back for continuous model and policy optimization",
-  },
-]
+const icons = [ArrowDownToLine, BrainCircuit, Gavel, RefreshCcw]
 
 export default function HowItWorks() {
+  const { lang } = useLanguage()
+  const tx = translations.howItWorks[lang]
+
   return (
     <section id="how-it-works" className="py-20 px-6 bg-section">
       <div className="max-w-7xl mx-auto">
@@ -35,14 +19,14 @@ export default function HowItWorks() {
             style={{ color: "var(--primary)" }}
           >
             <span className="w-6 h-0.5 inline-block" style={{ background: "var(--primary)" }} />
-            Process Flow
+            {tx.label}
             <span className="w-6 h-0.5 inline-block" style={{ background: "var(--primary)" }} />
           </div>
           <h2 className="text-3xl md:text-4xl font-extrabold leading-tight text-balance" style={{ color: "#1F2937" }}>
-            How InterKey DPI Works
+            {tx.heading}
           </h2>
           <p className="mt-3 text-sm leading-relaxed max-w-[500px] mx-auto" style={{ color: "var(--muted-foreground)" }}>
-            From packet ingestion to closed-loop governance: a seamless, AI-driven pipeline.
+            {tx.sub}
           </p>
         </div>
 
@@ -54,8 +38,8 @@ export default function HowItWorks() {
             style={{ background: "linear-gradient(90deg, transparent, var(--border-light, #C8CAE0) 20%, var(--border-light, #C8CAE0) 80%, transparent)" }}
           />
 
-          {steps.map((step, i) => {
-            const Icon = step.icon
+          {tx.steps.map((step, i) => {
+            const Icon = icons[i]
             return (
               <div key={step.title} className="group flex flex-col items-center text-center">
                 <div

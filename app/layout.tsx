@@ -16,9 +16,9 @@ const spaceMono = Space_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'InterKey Intelligent DPI: AI-Powered Deep Packet Inspection',
+  title: 'Interkey Intelligent DPI: AI-Powered Deep Packet Inspection',
   description:
-    'InterKey Intelligent DPI integrates a breakthrough AI Traffic Large Model to achieve 99% recognition accuracy on encrypted and adversarial applications, enabling precise, real-time control at carrier scale.',
+    'Interkey Intelligent DPI integrates a breakthrough AI Traffic Large Model to achieve 99% recognition accuracy on encrypted and adversarial applications, enabling precise, real-time control at carrier scale.',
   generator: 'v0.app',
 }
 
