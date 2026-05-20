@@ -6,9 +6,9 @@ import { translations } from "@/lib/translations"
 
 const icons = [Cpu, Radio, RefreshCcw, BarChart2]
 
-export default function WhyInterKey() {
+export default function WhyInterkey() {
   const { lang } = useLanguage()
-  const tx = translations.whyInterKey[lang]
+  const tx = translations.whyInterkey[lang]
 
   return (
     <section id="why-interkey" className="py-20 px-6" style={{ background: "var(--bg-dark)" }}>

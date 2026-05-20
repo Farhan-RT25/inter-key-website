@@ -37,7 +37,7 @@ export default function Header() {
         <Link href="/" className="no-underline">
           <img
             src="/images/SVG/Asset 1.svg"
-            alt="InterKey Intelligent DPI"
+            alt="Interkey Intelligent DPI"
             className="h-8 w-auto"
           />
         </Link>
