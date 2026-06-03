@@ -10,7 +10,6 @@ export const translations = {
       home: [
         { label: "Who It Serves", href: "#use-cases" },
         { label: "Solution", href: "#solution" },
-        { label: "Get Started", href: "#contact" },
       ],
       features: [
         { label: "Challenges", href: "#challenges" },
@@ -24,7 +23,6 @@ export const translations = {
       home: [
         { label: "من نخدم", href: "#use-cases" },
         { label: "الحل", href: "#solution" },
-        { label: "ابدأ الآن", href: "#contact" },
       ],
       features: [
         { label: "التحديات", href: "#challenges" },
@@ -39,7 +37,7 @@ export const translations = {
   // ─── Hero ─────────────────────────────────────────────────────────────────
   hero: {
     en: {
-      badge: "AI-Powered Network Intelligence",
+      badge: "AI-Powered Traffic Intelligence",
       h1pre: "Redefining Control for",
       h1highlight: "Ultra-Large Traffic",
       h1post: "Networks",
@@ -55,9 +53,9 @@ export const translations = {
       ],
     },
     ar: {
-      badge: "ذكاء الشبكة المدعوم بالذكاء الاصطناعي",
-      h1pre: "إعادة تعريف التحكم في",
-      h1highlight: "شبكات حركة المرور الضخمة",
+      badge: "تحليل ذكي لحركة الشبكات ‌بالذكاء الاصطناعي",
+      h1pre: "إعادة تعريف التحكم",
+      h1highlight: " في شبكات حركة المرور واسعة النطاق",
       h1post: "",
       sub: "يدمج Interkey Intelligent DPI نموذجًا ثوريًا للذكاء الاصطناعي لحركة المرور يحقق دقة تعرف بنسبة 99% على التطبيقات المشفرة والمعادية، مما يتيح التحكم الدقيق الفوري على مستوى مشغلي الاتصالات.",
       requestDemo: "طلب عرض توضيحي",
@@ -98,7 +96,7 @@ export const translations = {
     },
     ar: {
       label: "من نخدم",
-      heading: "مصمم لمشغلي الشبكات وفرق الحوكمة",
+      heading: "مصمم لمشغلي الشبكات ‌وفرق الحوكمة",
       cases: [
         {
           title: "مشغلو الاتصالات الوطنيون",
@@ -376,7 +374,7 @@ export const translations = {
       sub: "Interkey Intelligent DPI isn't a feature-matched competitor; it's a fundamentally different approach to network governance.",
       cards: [
         {
-          title: "AI-Native, Not AI-Bolted-On",
+          title: "AI Integrated at the Engine Core",
           desc: "The AI Traffic Large Model is the core engine, not an afterthought. Every classification decision flows through a continuously learning, multi-modal model trained on live traffic.",
         },
         {
@@ -399,7 +397,7 @@ export const translations = {
       sub: "Interkey Intelligent DPI ليس منافسًا متطابق الميزات؛ إنه نهج مختلف جوهريًا في حوكمة الشبكات.",
       cards: [
         {
-          title: "ذكاء اصطناعي أصلي، لا مضاف لاحقًا",
+          title: "الذكاء الاصطناعي مدمج في صميم المحرك",
           desc: "نموذج الذكاء الاصطناعي لحركة المرور هو المحرك الأساسي، وليس فكرة لاحقة. كل قرار تصنيف يتدفق عبر نموذج متعدد الأوضاع يتعلم باستمرار ومدرب على حركة المرور المباشرة.",
         },
         {
@@ -451,9 +449,9 @@ export const translations = {
     },
     ar: {
       label: "ابدأ الآن",
-      heading: "هل أنت مستعد للسيطرة على شبكتك؟",
+      heading: "هل أنت جاهز لتعزيز التحكم في شبكتك؟",
       sub: "تحدث مع فريقنا حول كيفية تحويل Interkey Intelligent DPI لقدرات حوكمة شبكتك.",
-      emailBtn: "راسل فريقنا",
+      emailBtn: "تواصل مع فريق الخبراء",
       phone: "+966-11-2180999",
       firstName: "الاسم الأول",
       firstPlaceholder: "أحمد",
@@ -491,7 +489,6 @@ export const translations = {
         { label: "Overview", href: "/#hero" },
         { label: "Who It Serves", href: "/#use-cases" },
         { label: "Solution", href: "/#solution" },
-        { label: "Get in Touch", href: "/#contact" },
       ],
       productLinks: [
         { label: "Core Features", href: "/features#features" },
@@ -507,7 +504,7 @@ export const translations = {
       address: "6897, King Fahd Road, Al Olaya District, 3388, Riyadh, Saudi Arabia",
     },
     ar: {
-      brand: "فحص الحزم العميق المدعوم بالذكاء الاصطناعي لشبكات مستوى مشغلي الاتصالات الضخمة. منتج من إنتركي، الشريك الموثوق لتقنية المعلومات والاتصالات في المملكة العربية السعودية.",
+      brand: "حلول فحص الحزم العميق المدعوم بالذكاء الاصطناعي لشبكات مستوى مشغلي الاتصالات الضخمة. منتج من إنتركي، الشريك الموثوق لتقنية المعلومات والاتصالات في المملكة العربية السعودية.",
       homeLabel: "الرئيسية",
       productLabel: "المنتج",
       companyLabel: "الشركة",
@@ -515,7 +512,6 @@ export const translations = {
         { label: "نظرة عامة", href: "/#hero" },
         { label: "من نخدم", href: "/#use-cases" },
         { label: "الحل", href: "/#solution" },
-        { label: "تواصل معنا", href: "/#contact" },
       ],
       productLinks: [
         { label: "الميزات الأساسية", href: "/features#features" },
