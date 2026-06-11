@@ -22,7 +22,7 @@ export default function Footer() {
           <div>
             <div className="mb-4">
               <img
-                src="/images/SVG/Asset 1.svg"
+                src="/images/SVG/Interkey_DPI_logo.svg"
                 alt="Interkey Intelligent DPI"
                 className="h-8 w-auto"
               />
