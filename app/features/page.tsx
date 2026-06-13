@@ -1,4 +1,11 @@
+import type { Metadata } from 'next'
 import Header from "@/components/header"
+
+export const metadata: Metadata = {
+  title: 'Features — Interkey Intelligent DPI',
+  description:
+    'Explore the full feature set of Interkey Intelligent DPI: encrypted traffic classification, policy enforcement, real-time analytics, and carrier-grade scalability powered by an AI Traffic Large Model.',
+}
 import Challenges from "@/components/challenges"
 import Features from "@/components/features"
 import LiveView from "@/components/live-view"
