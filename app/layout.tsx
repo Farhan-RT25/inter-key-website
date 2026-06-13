@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   title: TITLE,
   description: DESCRIPTION,
   icons: {
-    icon: '/images/SVG/Interkey_DPI_logo.svg',
+    icon: '/images/SVG/interkey_logo_only.svg',
   },
   openGraph: {
     type: 'website',

@@ -134,9 +134,9 @@ export default function Solution() {
                   </div>
                   <div className="text-[0.62rem] uppercase tracking-wider mt-1 text-white/60">{tx.appsLabel}</div>
                 </div>
-                <div className="absolute right-0 top-0 bottom-0 w-2/3 pointer-events-none">
+                <div className={`absolute ${lang === 'ar' ? 'left-0' : 'right-0'} top-0 bottom-0 w-2/3 pointer-events-none`}>
                   <div className="absolute inset-0" style={{ zIndex: 1 }} />
-                  <Image src="/images/map.png" alt="" fill className="object-cover object-center opacity-30" />
+                  <Image src="/images/map.png" alt="" fill className={`object-cover opacity-30 ${lang === 'ar' ? 'object-left' : 'object-right'}`} />
                 </div>
               </div>
 
@@ -158,9 +158,9 @@ export default function Solution() {
                   </div>
                   <div className="text-[0.62rem] uppercase tracking-wider mt-1 text-white/60">{tx.urlLibLabel}</div>
                 </div>
-                <div className="absolute right-0 top-0 left-60 bottom-0 w-2/3 pointer-events-none">
+                <div className={`absolute ${lang === 'ar' ? 'left-0 right-60' : 'right-0 left-60'} top-0 bottom-0 pointer-events-none`}>
                   <div className="absolute inset-0" style={{ background: "transparent 50%)", zIndex: 1 }} />
-                  <Image src="/images/world.png" alt="" fill className="object-cover object-center opacity-65" />
+                  <Image src="/images/world.png" alt="" fill className={`object-cover opacity-65 ${lang === 'ar' ? 'object-left' : 'object-right'}`} />
                 </div>
               </div>
             </div>
