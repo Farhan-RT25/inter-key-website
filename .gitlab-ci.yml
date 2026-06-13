@@ -1,0 +1,14 @@
+before_script:
+  - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
+
+stages:
+  - build
+
+build-prod:
+  stage: build
+  script:
+    - TAG=prod sh ./scripts/build-push.sh
+  only:
+    - main
+  tags:
+    - gpu
