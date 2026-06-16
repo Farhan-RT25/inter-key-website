@@ -137,7 +137,7 @@ export default function LiveView() {
                     className="flex-1 rounded-sm transition-all duration-700"
                     style={{
                       height: `${h}%`,
-                      background: "linear-gradient(to top, rgba(18,62,221,0.6), rgba(92,207,247,0.35))",
+                      background: "linear-gradient(to top, #0a2596, #1456ff)",
                     }}
                   />
                 ))}

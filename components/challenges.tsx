@@ -32,14 +32,14 @@ export default function Challenges() {
             return (
               <div
                 key={c.num}
-                className="reveal group relative bg-white rounded-xl p-8 border transition-all duration-300 hover:-translate-y-1 hover:shadow-xl overflow-hidden"
+                className="reveal relative rounded-xl p-8 -translate-y-1 shadow-xl overflow-hidden"
                 style={{ borderColor: "var(--border-light, #C8CAE0)" }}
               >
-                {/* Top accent line on hover */}
-                <div
-                  className="absolute top-0 left-0 right-0 h-[3px] opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                  style={{ background: "linear-gradient(90deg, var(--primary), var(--accent))" }}
-                />
+                {/* Top accent line */}
+                {/* <div
+                  className="absolute top-0 left-0 right-0 h-[3px]"
+                  style={{ background: "var(--primary)" }}
+                /> */}
 
                 <div
                   className="inline-block text-[0.68rem] font-bold font-mono tracking-wider px-2.5 py-1 rounded mb-4"

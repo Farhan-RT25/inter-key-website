@@ -23,6 +23,9 @@ const DESCRIPTION =
 export const metadata: Metadata = {
   title: TITLE,
   description: DESCRIPTION,
+  alternates: {
+    canonical: BASE_URL,
+  },
   icons: {
     icon: '/images/SVG/interkey_logo_only.svg',
   },

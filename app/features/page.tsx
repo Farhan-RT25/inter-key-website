@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: 'Features — Interkey Intelligent DPI',
   description:
     'Explore the full feature set of Interkey Intelligent DPI: encrypted traffic classification, policy enforcement, real-time analytics, and carrier-grade scalability powered by an AI Traffic Large Model.',
+  alternates: {
+    canonical: 'https://dpi.interkey.com.sa/features/',
+  },
 }
 import Challenges from "@/components/challenges"
 import Features from "@/components/features"

@@ -27,9 +27,9 @@ export default function Header() {
         scrolled ? "shadow-lg" : ""
       }`}
       style={{
-        background: "rgba(10,15,46,0.92)",
-        backdropFilter: "blur(14px)",
-        borderBottom: "1px solid rgba(255,255,255,0.08)",
+        background: scrolled ? "rgba(10,15,46,0.92)" : "transparent",
+        backdropFilter: scrolled ? "blur(14px)" : "none",
+        borderBottom: scrolled ? "1px solid rgba(255,255,255,0.08)" : "none",
       }}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between h-[68px]">
@@ -103,7 +103,7 @@ export default function Header() {
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div className="md:hidden border-t border-white/8 py-3 px-4 flex flex-col gap-1" style={{ background: "rgba(10,15,46,0.98)" }}>
+        <div className="md:hidden border-t border-white/8 rounded-md py-3 px-4 flex flex-col gap-1" style={{ background: "rgba(10,15,46,0.98)" }}>
           {links.map((link) => (
             <Link
               key={link.href}

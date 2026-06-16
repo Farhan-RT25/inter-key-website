@@ -84,9 +84,9 @@ export default function Solution() {
 
             {/* Metrics */}
             <div className="flex flex-col gap-3 relative">
-              <div className="grid grid-cols-2 gap-3">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div
-                  className="rounded-xl p-4 flex items-center gap-5"
+                  className="rounded-xl p-4 flex items-center gap-3"
                   style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)" }}
                 >
                   <div
@@ -95,14 +95,14 @@ export default function Solution() {
                   >
                     <Crosshair size={20} style={{ color: "var(--accent)" }} />
                   </div>
-                  <div>
+                  <div className="min-w-0">
                     <div className="font-mono text-2xl font-bold leading-none" style={{ color: "var(--accent)" }}>99%</div>
                     <div className="text-[0.62rem] uppercase tracking-wider mt-1 text-white/60">{tx.recognitionLabel}</div>
                   </div>
                 </div>
 
                 <div
-                  className="rounded-xl p-4 flex items-center gap-5"
+                  className="rounded-xl p-4 flex items-center gap-3"
                   style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)" }}
                 >
                   <div
@@ -111,8 +111,8 @@ export default function Solution() {
                   >
                     <ShieldCheck size={20} style={{ color: "var(--accent)" }} />
                   </div>
-                  <div>
-                    <div className="font-mono text-2xl font-bold leading-none" style={{ color: "var(--accent)" }}>99.999%</div>
+                  <div className="min-w-0">
+                    <div className="font-mono text-xl font-bold leading-none" style={{ color: "var(--accent)" }}>99.999%</div>
                     <div className="text-[0.62rem] uppercase tracking-wider mt-1 text-white/60">{tx.availabilityLabel}</div>
                   </div>
                 </div>

@@ -117,7 +117,7 @@ export default function CTAContact() {
             <div className="flex flex-wrap gap-4">
               <a
                 href="mailto:info@interkey.com.sa"
-                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl text-sm font-bold text-white transition-all duration-250 hover:-translate-y-0.5"
+                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-lg text-sm font-bold text-white transition-all duration-250 hover:-translate-y-0.5"
                 style={{ background: "var(--primary)", boxShadow: "0 0 32px rgba(18,62,221,0.5)" }}
               >
                 <Mail size={16} />
@@ -125,7 +125,7 @@ export default function CTAContact() {
               </a>
               <a
                 href="tel:+966112180999"
-                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl text-sm font-semibold text-white border transition-all duration-250 hover:bg-white/6 hover:-translate-y-0.5"
+                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-lg text-sm font-bold text-white border transition-all duration-250 hover:bg-white/6 hover:-translate-y-0.5"
                 style={{ borderColor: "rgba(255,255,255,0.2)" }}
               >
                 <Phone size={16} />

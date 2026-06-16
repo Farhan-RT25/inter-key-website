@@ -69,7 +69,7 @@ export default function Hero() {
         <div className="orb" style={{ width: 260, height: 260, background: "rgba(0,229,160,0.09)", top: "40%", right: "15%" }} />
 
         {/* Main content */}
-        <div className="relative z-10 max-w-7xl mx-auto px-6 w-full">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-0 w-full">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             {/* Left column */}
             <div style={{ animation: "fadeUp 0.7s ease both" }}>
@@ -114,12 +114,12 @@ export default function Hero() {
                     boxShadow: "0 0 32px rgba(18,62,221,0.5)",
                   }}
                 >
-                  <CalendarCheck size={16} />
+                  <CalendarCheck size={20} />
                   {tx.requestDemo}
                 </Link>
                 <Link
                   href="/features"
-                  className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl text-sm font-semibold text-white border transition-all duration-250 hover:bg-white/6 hover:-translate-y-0.5"
+                  className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl text-sm font-bold text-white border transition-all duration-250 hover:bg-white/6 hover:-translate-y-0.5"
                   style={{ borderColor: "rgba(255,255,255,0.2)" }}
                 >
                   {tx.exploreFeatures}
@@ -139,7 +139,7 @@ export default function Hero() {
               {tx.stats.map((s) => (
                 <div
                   key={s.label}
-                  className="relative p-8 text-center group transition-all duration-300 hover:bg-white/6"
+                  className="relative p-4 sm:p-8 text-center group transition-all duration-300 hover:bg-white/6"
                   style={{ background: "rgba(255,255,255,0.02)" }}
                 >
                   <div
@@ -150,13 +150,13 @@ export default function Hero() {
                   />
                   <div className="relative">
                     <div
-                      className="text-[2.4rem] font-extrabold leading-none font-mono"
+                      className="text-[1.4rem] sm:text-[2.4rem] font-extrabold leading-none font-mono"
                       style={{ color: "white" }}
                     >
                       <span style={{ color: "var(--accent)" }}>{s.value}</span>
                       {s.suffix}
                     </div>
-                    <div className="text-[0.7rem] uppercase tracking-wider mt-2 font-medium text-white/60">
+                    <div className="text-[0.6rem] sm:text-[0.7rem] uppercase tracking-wider mt-2 font-medium text-white/60 leading-tight">
                       {s.label}
                     </div>
                   </div>

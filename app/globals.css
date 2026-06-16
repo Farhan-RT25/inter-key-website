@@ -40,7 +40,7 @@
   --bg-card: #0D1540;
   --bg-section: #F2F4F4;
 
-  --radius: 0.75rem;
+  --radius: 0.25rem;
 
   /* chart colors */
   --chart-1: #123EDD;
@@ -78,10 +78,12 @@
   --color-chart-3: var(--chart-3);
   --color-chart-4: var(--chart-4);
   --color-chart-5: var(--chart-5);
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
+  --radius-sm: 2px;
+  --radius-md: 3px;
+  --radius-lg: 4px;
+  --radius-xl: 6px;
+  --radius-2xl: 8px;
+  --radius-3xl: 12px;
 }
 
 @layer base {
